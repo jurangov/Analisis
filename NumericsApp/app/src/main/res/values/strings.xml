@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NumericsApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_incremental_search">IncrementalSearch</string>
+    <string name="title_activity_bisection">Bisection</string>
+    <string name="title_activity_false_rule">FalseRule</string>
+    <string name="title_activity_fixed_point">FixedPoint</string>
+    <string name="title_activity_newton">Newton</string>
+    <string name="title_activity_secant">Secant</string>
+    <string name="title_activity_multiple_root">MultipleRoot</string>
+    <string name="title_activity_answer_table">AnswerTable</string>
+
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.analisis.numericsapp.app" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.analisis.numericsapp.app.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.IncrementalSearch"
+            android:label="@string/title_activity_incremental_search" >
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.Bisection"
+            android:label="@string/title_activity_bisection" >
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.FalseRule"
+            android:label="@string/title_activity_false_rule" >
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.FixedPoint"
+            android:label="@string/title_activity_fixed_point" >
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.Newton"
+            android:label="@string/title_activity_newton" >
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.Secant"
+            android:label="@string/title_activity_secant" >
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.MultipleRoot"
+            android:label="@string/title_activity_multiple_root" >
+        </activity>
+        <activity
+            android:name="com.analisis.numericsapp.app.AnswerTable"
+            android:label="@string/title_activity_answer_table" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.analisis.numericsapp.app.MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Increamental Search"
+        android:id="@+id/IncrementalSearch"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bisection Method"
+        android:id="@+id/Bisection"
+        android:layout_alignEnd="@+id/IncrementalSearch"
+        android:layout_alignStart="@+id/IncrementalSearch"
+        android:layout_below="@+id/IncrementalSearch"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="False Rule Method"
+        android:id="@+id/FalseRule"
+        android:layout_alignEnd="@+id/IncrementalSearch"
+        android:layout_alignStart="@+id/IncrementalSearch"
+        android:layout_below="@+id/Bisection"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fixed Point Method"
+        android:id="@+id/FixedPoint"
+        android:layout_alignEnd="@+id/IncrementalSearch"
+        android:layout_alignStart="@+id/FalseRule"
+        android:layout_below="@+id/FalseRule"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Newton Method"
+        android:id="@+id/Newton"
+        android:layout_alignStart="@+id/FixedPoint"
+        android:layout_alignEnd="@+id/MultipleRoot"
+        android:layout_below="@+id/FixedPoint"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Secant Method"
+        android:id="@+id/Secant"
+        android:layout_alignEnd="@+id/MultipleRoot"
+        android:layout_alignStart="@+id/Newton"
+        android:layout_below="@+id/Newton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Multiple Roots Method"
+        android:id="@+id/MultipleRoot"
+        android:layout_alignEnd="@+id/FixedPoint"
+        android:layout_alignStart="@+id/FixedPoint"
+        android:layout_below="@+id/Secant"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
