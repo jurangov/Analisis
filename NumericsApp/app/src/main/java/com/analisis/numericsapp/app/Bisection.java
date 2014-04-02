@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class Bisection extends ActionBarActivity {
@@ -11,7 +13,7 @@ public class Bisection extends ActionBarActivity {
     public int xValue;
     public int iterations;
     public int XsValue;
-    public int tolerance;
+    public double tolerance;
 
     private static int contadorFilas=0;
     public static Funcion f= null;
@@ -53,8 +55,36 @@ public class Bisection extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static double[][] biseccion(double xInf, double xSup, int iteraciones, double tolerancia) {
-        double i[][] = new double[iteraciones][6];
+    public void CalculateBisection(View v)
+    {
+        response = (TextView)findViewById(R.id.textView5);
+        GetValues();
+
+        matrix = bisection(xValue, XsValue, iterations, tolerance);
+        WrapperMatrix.matrix = matrix;
+    }
+
+    public void GetValues()
+    {
+        EditText xvalueText = (EditText)findViewById(R.id.editText2);
+        xValue = Integer.parseInt(xvalueText.getText().toString());
+
+        EditText iterationsText = (EditText)findViewById(R.id.editText5);
+        iterations = Integer.parseInt(iterationsText.getText().toString());
+
+        EditText XsValueText = (EditText)findViewById(R.id.editText3);
+        XsValue = Integer.parseInt(XsValueText.getText().toString());
+
+        EditText ToleranceText = (EditText)findViewById(R.id.editText4);
+        tolerance = Integer.parseInt(ToleranceText.getText().toString());
+
+        EditText functionText = (EditText)findViewById(R.id.editText);
+        f = new Funcion(functionText.getText().toString());
+    }
+
+
+    public static double[][] bisection(double xInf, double xSup, int iterations, double tolerance) {
+        double i[][] = new double[iterations][6];
         double yInf = f.evaluarFuncion(xInf);
         double ySup = f.evaluarFuncion(xSup);
         if (yInf == 0) {
@@ -71,7 +101,7 @@ public class Bisection extends ActionBarActivity {
             int contador=0;
             double xMedio = (xInf + xSup) / 2;
             double yMedio = f.evaluarFuncion(xMedio);
-            double E = tolerancia + 1;
+            double E = tolerance + 1;
             i[contador][0] = contador;
             i[contador][1] = xInf;
             i[contador][2] = xSup;
@@ -80,7 +110,7 @@ public class Bisection extends ActionBarActivity {
             i[contador][5] = E;
             contadorFilas++;
             contador = 1;
-            while (E > tolerancia && yMedio != 0 && contador <= iteraciones) {
+            while (E > tolerance && yMedio != 0 && contador <= iterations) {
                 if ((yInf * yMedio) < 0) {
                     xSup = xMedio;
                     ySup = yMedio;
@@ -103,7 +133,7 @@ public class Bisection extends ActionBarActivity {
                 contadorFilas++;
                 contador = contador + 1;
             }
-            for (int j = 0; j < iteraciones; j++) {
+            for (int j = 0; j < iterations; j++) {
 
                 for (int k = 0; k < 6; k++) {
                     System.out.print(i[j][k] + "                       ");
@@ -113,7 +143,7 @@ public class Bisection extends ActionBarActivity {
             if (yMedio == 0) {
                 System.out.println("xMedio=" + xMedio + "es raiz");
                 respuesta="xMedio=" + xMedio + "es raiz";
-            } else if (E < tolerancia) {
+            } else if (E < tolerance) {
                 System.out.println("xMedio=" + xMedio + "es raiz con error " + E);
                 respuesta="xMedio=" + xMedio + "es raiz con error " + E;
             } else {

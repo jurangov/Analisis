@@ -75,7 +75,7 @@ public class IncrementalSearch extends ActionBarActivity
         response = (TextView)findViewById(R.id.textView5);
         GetValues();
 
-        matrix = busquedaIncremental(xValue, delta, iterations);
+        matrix = incrementalSearch(xValue, delta, iterations);
         WrapperMatrix.matrix = matrix;
     }
 
@@ -94,7 +94,7 @@ public class IncrementalSearch extends ActionBarActivity
         f = new Funcion(functionText.getText().toString());
     }
 
-    public static double[][]  busquedaIncremental(double xanterior, double incremento, int iteraciones)
+    public static double[][] incrementalSearch(double xanterior, double incremento, int iteraciones)
     {
         //EL unico al que no le sobra una llave abajo
         double i[][] = new double[iteraciones][3];
